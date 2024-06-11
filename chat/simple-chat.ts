@@ -5,6 +5,14 @@
 
 import { ChatOpenAI } from "@langchain/openai";
 
-const chatModel = new ChatOpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+async function main() {
+  const chatModel = new ChatOpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+  const result = await chatModel.invoke("what is LangSmith?");
+  console.log(result);
+}
+
+
+
+main().catch(console.error);
