@@ -1,0 +1,20 @@
+{
+  "name": "langchain-js-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/helipilot50/langchain-js-examples.git",
+  "author": "Peter Milne <helipilot50@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "chat:simple": "env-cmd ts-node chat/simple-chat.ts"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.1.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "env-cmd": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
