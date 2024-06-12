@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "chat:simple": "env-cmd ts-node chat/simple-chat.ts",
-    "rag:simple": "env-cmd ts-node chat/retrival-chain.ts"
+    "rag:simple": "env-cmd ts-node chat/retrival-chain.ts",
+    "rag:chat": "env-cmd ts-node chat/retrival-chain-chat.ts"
   },
   "dependencies": {
     "@langchain/community": "^0.2.10",
