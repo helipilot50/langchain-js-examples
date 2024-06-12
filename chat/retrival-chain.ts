@@ -6,6 +6,7 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { ChatOpenAI, } from "@langchain/openai";
 import { Document } from "@langchain/core/documents";
+import { createRetrievalChain } from "langchain/chains/retrieval";
 
 
 async function main() {
@@ -61,7 +62,8 @@ Question: {input}`);
     prompt,
   });
 
-  const result = await documentChain.invoke({
+  // If we wanted to, we could run this ourselves by passing in documents directly:
+  let result: any = await documentChain.invoke({
     input: "what is LangSmith?",
     context: [
       new Document({
@@ -71,7 +73,27 @@ Question: {input}`);
     ],
   });
 
-  console.log(result);
+  console.log('direct from documents', result);
+
+  // However, we want the documents to first come from the retriever we just set up. 
+  // That way, for a given question we can use the retriever to 
+  // dynamically select the most relevant documents and pass those in.
+
+
+  const retriever = vectorstore.asRetriever();
+
+  const retrievalChain = await createRetrievalChain({
+    combineDocsChain: documentChain,
+    retriever,
+  });
+
+  // We can now invoke this chain. This returns an object - the response from the LLM is in the answer key:
+  result = await retrievalChain.invoke({
+    input: "what is LangSmith?",
+  });
+
+  console.log('using retrival chain', result.answer);
+
 }
 
 main().catch(console.error);
