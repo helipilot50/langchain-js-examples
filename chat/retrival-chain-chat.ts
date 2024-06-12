@@ -5,7 +5,6 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { ChatOpenAI, } from "@langchain/openai";
-import { Document } from "@langchain/core/documents";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { MessagesPlaceholder } from "@langchain/core/prompts";

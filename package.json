@@ -8,7 +8,9 @@
   "scripts": {
     "chat:simple": "env-cmd ts-node chat/simple-chat.ts",
     "rag:simple": "env-cmd ts-node chat/retrival-chain.ts",
-    "rag:chat": "env-cmd ts-node chat/retrival-chain-chat.ts"
+    "rag:chat": "env-cmd ts-node chat/retrival-chain-chat.ts",
+    "agent:simple": "env-cmd ts-node agent/agent-simple.ts",
+    "agent:chat": "env-cmd ts-node agent/agent-conversation.ts"
   },
   "dependencies": {
     "@langchain/community": "^0.2.10",
