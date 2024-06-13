@@ -10,7 +10,9 @@
     "rag:simple": "env-cmd ts-node chat/retrival-chain.ts",
     "rag:chat": "env-cmd ts-node chat/retrival-chain-chat.ts",
     "agent:simple": "env-cmd ts-node agent/agent-simple.ts",
-    "lcel:simple": "env-cmd ts-node lcel/lcel-simple.ts"
+    "lcel:stream": "env-cmd ts-node lcel/lcel-stream.ts",
+    "lcel:invoke": "env-cmd ts-node lcel/lcel-invoke.ts",
+    "lcel:batch": "env-cmd ts-node lcel/lcel-batch.ts"
   },
   "dependencies": {
     "@langchain/community": "^0.2.10",
