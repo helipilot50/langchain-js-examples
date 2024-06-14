@@ -12,7 +12,12 @@
     "agent:simple": "env-cmd ts-node agent/agent-simple.ts",
     "lcel:stream": "env-cmd ts-node lcel/lcel-stream.ts",
     "lcel:invoke": "env-cmd ts-node lcel/lcel-invoke.ts",
-    "lcel:batch": "env-cmd ts-node lcel/lcel-batch.ts"
+    "lcel:batch": "env-cmd ts-node lcel/lcel-batch.ts",
+    "streaming:llm": "env-cmd ts-node streaming/streaming-llm.ts",
+    "streaming:chains": "env-cmd ts-node streaming/streaming-chains.ts",
+    "streaming:output": "env-cmd ts-node streaming/streaming-output.ts",
+    "streaming:non": "env-cmd ts-node streaming/streaming-non.ts",
+    "streaming:events": "env-cmd ts-node streaming/streaming-events.ts"
   },
   "dependencies": {
     "@langchain/community": "^0.2.10",
