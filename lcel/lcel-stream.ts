@@ -9,18 +9,17 @@ async function main() {
 
   const chain = promptTemplate.pipe(model);
 
-  const stream = await chain.stream({ topic: "bears" });
+  const stream = await chain.stream({ topic: "old white men" });
 
   // Each chunk has the same interface as a chat message
   for await (const chunk of stream) {
     console.log(chunk?.content);
   }
 
-  /*
-  Why don't bears wear shoes?
-  
-  Because they have bear feet!
-  */
+
 }
 
 main().catch(console.error);
+
+
+// https://js.langchain.com/v0.1/docs/expression_language/interface/#stream
